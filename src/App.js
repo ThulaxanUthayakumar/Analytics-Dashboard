@@ -1,25 +1,82 @@
-import logo from './logo.svg';
-import './App.css';
+import { ThemeProvider, useTheme } from "./context/ThemeContext";
+import Sidebar from "./components/Sidebar";
+import TopBar from "./components/TopBar";
+import StatCard from "./components/StatCard";
+import RevenueChart from "./components/RevenueChart";
+import UserChart from "./components/UserChart";
+import CategoryChart from "./components/CategoryChart";
+import RecentOrders from "./components/RecentOrders";
+import { stats } from "./data/mockData";
 
-function App() {
+function Dashboard() {
+  const { dark } = useTheme();
+
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div
+      style={{
+        display: "flex",
+        minHeight: "100vh",
+        background: dark ? "#0f172a" : "#f8fafc",
+        fontFamily: "system-ui, sans-serif",
+      }}
+    >
+      <Sidebar />
+
+      <div
+        style={{
+          flex: 1,
+          display: "flex",
+          flexDirection: "column",
+          overflow: "auto",
+        }}
+      >
+        <TopBar />
+
+        <main style={{ padding: "28px", flex: 1 }}>
+          {/* Stats */}
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "repeat(4, 1fr)",
+              gap: 16,
+              marginBottom: 24,
+            }}
+          >
+            {stats.map((s) => (
+              <StatCard key={s.label} {...s} />
+            ))}
+          </div>
+
+          {/* Revenue + Category */}
+          <div
+            style={{
+              display: "grid",
+              gridTemplateColumns: "2fr 1fr",
+              gap: 16,
+              marginBottom: 24,
+            }}
+          >
+            <RevenueChart />
+            <CategoryChart />
+          </div>
+
+          {/* User Growth */}
+          <div style={{ marginBottom: 24 }}>
+            <UserChart />
+          </div>
+
+          {/* Recent Orders */}
+          <RecentOrders />
+        </main>
+      </div>
     </div>
   );
 }
 
-export default App;
+export default function App() {
+  return (
+    <ThemeProvider>
+      <Dashboard />
+    </ThemeProvider>
+  );
+}
