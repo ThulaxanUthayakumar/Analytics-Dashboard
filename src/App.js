@@ -12,50 +12,43 @@ function Dashboard() {
   const { dark } = useTheme();
 
   return (
-    <div
-      style={{
-        display: "flex",
-        minHeight: "100vh",
-        background: dark ? "#0f172a" : "#f8fafc",
-        fontFamily: "system-ui, sans-serif",
-      }}
-    >
+    <div style={{
+      display: "flex",
+      minHeight: "100vh",
+      background: dark ? "#060d18" : "#f8fafc",
+      fontFamily: "system-ui, sans-serif",
+    }}>
       <Sidebar />
 
-      <div
-        style={{
-          flex: 1,
-          display: "flex",
-          flexDirection: "column",
-          overflow: "auto",
-        }}
-      >
+      <div style={{
+        flex: 1,
+        display: "flex",
+        flexDirection: "column",
+        minWidth: 0,
+      }}>
         <TopBar />
 
-        <main style={{ padding: "28px", flex: 1 }}>
-          {/* Stats */}
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "repeat(4, 1fr)",
-              gap: 16,
-              marginBottom: 24,
-            }}
-          >
+        <main style={{ padding: 28, flex: 1 }}>
+
+          {/* Stat Cards */}
+          <div style={{
+            display: "grid",
+            gridTemplateColumns: "repeat(4, 1fr)",
+            gap: 16,
+            marginBottom: 24,
+          }}>
             {stats.map((s) => (
               <StatCard key={s.label} {...s} />
             ))}
           </div>
 
           {/* Revenue + Category */}
-          <div
-            style={{
-              display: "grid",
-              gridTemplateColumns: "2fr 1fr",
-              gap: 16,
-              marginBottom: 24,
-            }}
-          >
+          <div style={{
+            display: "grid",
+            gridTemplateColumns: "2fr 1fr",
+            gap: 16,
+            marginBottom: 24,
+          }}>
             <RevenueChart />
             <CategoryChart />
           </div>
@@ -65,8 +58,9 @@ function Dashboard() {
             <UserChart />
           </div>
 
-          {/* Recent Orders */}
+          {/* Orders */}
           <RecentOrders />
+
         </main>
       </div>
     </div>

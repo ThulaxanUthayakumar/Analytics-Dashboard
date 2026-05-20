@@ -30,24 +30,24 @@ export const userGrowthData = [
 
 export const categoryData = [
   { name: "Electronics", value: 35, color: "#3b82f6" },
-  { name: "Clothing", value: 25, color: "#8b5cf6" },
-  { name: "Food", value: 20, color: "#22c55e" },
-  { name: "Books", value: 12, color: "#f59e0b" },
-  { name: "Other", value: 8, color: "#ef4444" },
+  { name: "Clothing",    value: 25, color: "#8b5cf6" },
+  { name: "Food",        value: 20, color: "#22c55e" },
+  { name: "Books",       value: 12, color: "#f59e0b" },
+  { name: "Other",       value: 8,  color: "#ef4444" },
 ];
 
 export const recentOrders = [
-  { id: "#ORD-001", customer: "Asel Fernando", product: "MacBook Pro", amount: 2499, status: "Delivered", date: "2026-05-01" },
-  { id: "#ORD-002", customer: "Ravi Shankar", product: "iPhone 15", amount: 999, status: "Processing", date: "2026-05-03" },
-  { id: "#ORD-003", customer: "Priya Nair", product: "Nike Air Max", amount: 189, status: "Shipped", date: "2026-05-05" },
-  { id: "#ORD-004", customer: "Kamal Silva", product: "Sony Headphones", amount: 349, status: "Delivered", date: "2026-05-07" },
-  { id: "#ORD-005", customer: "Nisha Patel", product: "iPad Air", amount: 749, status: "Cancelled", date: "2026-05-09" },
-  { id: "#ORD-006", customer: "Thulaxan U", product: "Samsung TV", amount: 1299, status: "Processing", date: "2026-05-10" },
+  { id: "#ORD-001", customer: "Asel Fernando",  product: "MacBook Pro",      amount: 2499, status: "Delivered",  date: "2026-05-01" },
+  { id: "#ORD-002", customer: "Ravi Shankar",   product: "iPhone 15",        amount: 999,  status: "Processing", date: "2026-05-03" },
+  { id: "#ORD-003", customer: "Priya Nair",     product: "Nike Air Max",     amount: 189,  status: "Shipped",    date: "2026-05-05" },
+  { id: "#ORD-004", customer: "Kamal Silva",    product: "Sony Headphones",  amount: 349,  status: "Delivered",  date: "2026-05-07" },
+  { id: "#ORD-005", customer: "Nisha Patel",    product: "iPad Air",         amount: 749,  status: "Cancelled",  date: "2026-05-09" },
+  { id: "#ORD-006", customer: "Thulaxan U",     product: "Samsung TV",       amount: 1299, status: "Processing", date: "2026-05-10" },
 ];
 
 export const stats = [
-  { label: "Total Revenue", value: "$764,000", change: "+12.5%", up: true, icon: "💰" },
-  { label: "Total Users", value: "38,900", change: "+8.2%", up: true, icon: "👥" },
-  { label: "Total Orders", value: "12,430", change: "+5.1%", up: true, icon: "📦" },
-  { label: "Churn Rate", value: "2.4%", change: "-0.8%", up: false, icon: "📉" },
+  { label: "Total Revenue", value: "$764,000", change: "+12.5%", up: true,  icon: "💰" },
+  { label: "Total Users",   value: "38,900",   change: "+8.2%",  up: true,  icon: "👥" },
+  { label: "Total Orders",  value: "12,430",   change: "+5.1%",  up: true,  icon: "📦" },
+  { label: "Churn Rate",    value: "2.4%",     change: "-0.8%",  up: false, icon: "📉" },
 ];
